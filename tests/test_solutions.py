@@ -111,3 +111,24 @@ class TestTask4:
                 if os.path.exists(fp):
                     os.remove(fp)
             assert os.listdir(tmp_path) == []
+
+
+class TestTask5:
+    @classmethod
+    def setup_class(cls):
+        fixtures_dir = f'{FIXTURES_DIRECTORY}/join_words'
+        cls.__questions_answers = []
+        for subdir in os.listdir(fixtures_dir):
+            entry = {'src_fp': f'{fixtures_dir}/{subdir}/words.txt'}
+            with open(f'{fixtures_dir}/{subdir}/request_response.txt') as f:
+                for line in f.readlines():
+                    request, response = line.strip().split('|')
+            entry.update({
+                'request': request,
+                'response': response.split(',')
+            })
+            cls.__questions_answers.append(entry)
+
+    def test_lists2dicts(self):
+        for entry in self.__questions_answers:
+            assert sorted(solutions.join_words(entry['src_fp'], entry['request'])) == sorted(entry['response'])
