@@ -1,9 +1,9 @@
-import os
-import time
-
 # Задание 4
 # Имеется папка с файлами
 # Реализовать удаление файлов старше N дней
+
+import os
+import time
 
 
 def remove_old_files(dir_: str, max_days: int) -> None:

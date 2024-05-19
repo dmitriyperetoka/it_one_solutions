@@ -1,6 +1,3 @@
-import statistics
-from typing import List, Set, Tuple
-
 # Задание 2
 # в наличии список множеств. внутри множества целые числа
 # посчитать 
@@ -12,6 +9,9 @@ from typing import List, Set, Tuple
 m = [{11, 3, 5}, {2, 17, 87, 32}, {4, 44}, {24, 11, 9, 7, 8}]
 """
 # *написать решения в одну строку
+
+import statistics
+from typing import List, Set, Tuple
 
 
 def count_all(src: List[Set[int]]) -> int:

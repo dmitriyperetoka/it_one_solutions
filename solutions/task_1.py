@@ -1,7 +1,3 @@
-from typing import Tuple
-
-import pandas as pd
-
 # Задание 1
 # имеется текстовый файл f.csv, по формату похожий на .csv с разделителем |
 """
@@ -13,6 +9,10 @@ lastname|name|patronymic|date_of_birth|id
 
 # 1. Реализовать сбор уникальных записей
 # 2. Случается, что под одинаковым id присутствуют разные данные - собрать такие записи
+
+from typing import Tuple
+
+import pandas as pd
 
 
 def fetch_unique_entries_from_file(fp: str = 'f.csv', csv_sep: str = '|') -> Tuple[pd.DataFrame, pd.DataFrame]:
