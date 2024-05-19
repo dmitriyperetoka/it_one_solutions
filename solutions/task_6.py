@@ -28,8 +28,7 @@ import datetime
 from typing import Optional
 
 import pandas as pd
-from airflow.providers.http.hooks.http import HttpHook  # noqa
-from airflow.models.connection import Connection  # noqa
+from airflow.providers.http.hooks.http import HttpHook
 from pydantic import BaseModel
 
 
@@ -59,4 +58,5 @@ def extract_transform_data(
         .assign(**{'load_dt': [datetime_now] * len(rows)})
     )
     df['document_dt'] = pd.to_datetime(df['document_dt'], format=datetime_format)
+
     return df

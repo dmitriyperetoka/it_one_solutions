@@ -6,7 +6,7 @@ import pandas as pd
 import pydantic_core
 import pytest
 import responses
-from airflow.models.connection import Connection  # noqa
+from airflow.models.connection import Connection
 
 import solutions
 
