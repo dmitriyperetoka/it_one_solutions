@@ -15,7 +15,7 @@ from typing import Tuple
 import pandas as pd
 
 
-def fetch_unique_entries_from_file(fp: str = 'f.csv', csv_sep: str = '|') -> Tuple[pd.DataFrame, pd.DataFrame]:
+def fetch_unique_entries_from_file(fp: str, csv_sep: str = '|') -> Tuple[pd.DataFrame, pd.DataFrame]:
     df = pd.read_csv(fp, sep=csv_sep)
     unique_entries = df.drop_duplicates()
     duplicate_id_unique_entries = unique_entries[unique_entries.duplicated('id', keep=False)]
