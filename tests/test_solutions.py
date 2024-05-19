@@ -125,7 +125,7 @@ class TestTask5:
                     request, response = line.strip().split('|')
             entry.update({
                 'request': request,
-                'response': response.split(',')
+                'response': response.split(',') if response else []
             })
             cls.__questions_answers.append(entry)
 
