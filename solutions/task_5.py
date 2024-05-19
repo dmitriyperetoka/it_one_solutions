@@ -31,7 +31,7 @@ def join_words(fp: str, first_word: str) -> List[str]:
     for src_word in src_words:
         if first_word != src_word:
             cursor = min(len(first_word), len(src_word))
-            while cursor > 0:
+            while cursor >= 0:
                 if first_word[-1 - cursor:] == src_word[:cursor + 1]:
                     result_words.append(first_word + src_word[cursor + 1:])
                     break
